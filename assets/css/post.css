@@ -1,0 +1,117 @@
+.post-card {
+    padding: 1.9rem 0 2rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.post-card:first-child {
+    padding-top: 0;
+}
+
+.post-card__date,
+.content-page__date,
+.section-view__eyebrow {
+    display: block;
+    color: var(--text-soft);
+    font-size: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    margin-top: 0.45rem;
+    margin-bottom: 0;
+}
+
+.post-card__title,
+.content-page h1,
+.section-view h1 {
+    margin: 0;
+    font-size: clamp(1.7rem, 2.1vw, 2.2rem);
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+}
+
+.post-card__title {
+    font-size: clamp(1.3rem, 1.8vw, 1.65rem);
+}
+
+.post-card__title a {
+    display: inline;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.post-card__title a:hover,
+.post-card__title a:focus-visible {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 0.2rem;
+}
+
+.post-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+}
+
+.post-card__tags a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.1rem;
+    padding: 0.08rem 0.35rem;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: 0.45rem;
+}
+
+.post-card__tag-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.78rem;
+    height: 0.78rem;
+    margin-right: 0.25rem;
+    flex-shrink: 0;
+}
+
+.post-card__tag-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.post-card__tag-icon svg * {
+    stroke: currentColor;
+}
+
+.post-card__excerpt,
+.content-page__body,
+.section-view__intro {
+    color: var(--text-soft);
+    font-size: 0.98rem;
+}
+
+.post-card__excerpt {
+    margin-top: 0.85rem;
+}
+
+.post-card__tags span:last-child {
+    line-height: 1;
+}
+
+.post-card__more {
+    display: inline-block;
+    margin-top: 0.7rem;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    transition: color 180ms ease;
+}
+
+.post-card__more:hover,
+.post-card__more:focus-visible {
+    color: var(--accent);
+}

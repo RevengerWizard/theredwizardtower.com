@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <section class="content-page content-page--home">
+    <div class="content-page__body">
+      {{ .Content }}
+    </div>
+  </section>
+
+  {{- $posts := where site.RegularPages "Section" "posts" -}}
+  <section class="section-view section-view--recent" aria-label="Recent posts">
+    <header class="section-view__header">
+      <h1>Recent</h1>
+    </header>
+    <div class="post-feed">
+      {{- range first 3 $posts.ByDate.Reverse }}
+        {{ partial "post-card-compact.html" . }}
+      {{- end }}
+    </div>
+  </section>
+{{ end }}

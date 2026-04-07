@@ -1,0 +1,39 @@
+{{- $page := .Page | default . -}}
+{{- $title := site.Title -}}
+{{- if and $page (not $page.IsHome) $page.Title -}}
+  {{- $title = printf "%s | %s" $page.Title site.Title -}}
+{{- end -}}
+{{- $description := "" -}}
+{{- if and $page $page.Description -}}
+  {{- $description = $page.Description -}}
+{{- else if and $page $page.IsHome -}}
+  {{- $description = site.Params.tagline | default site.Title -}}
+{{- else if and $page $page.Summary -}}
+  {{- $description = $page.Summary | plainify | truncate 160 -}}
+{{- else -}}
+  {{- $description = site.Params.tagline | default site.Title -}}
+{{- end -}}
+{{- $styles := slice
+    (resources.Get "css/style.css")
+    (resources.Get "css/header.css")
+    (resources.Get "css/terms.css")
+    (resources.Get "css/footer.css")
+    (resources.Get "css/404.css")
+    (resources.Get "css/post.css")
+    | resources.Concat "css/site.css"
+    | minify
+    | fingerprint
+-}}
+{{- $script := resources.Get "js/site.js" | js.Build | minify | fingerprint -}}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ $page.RelPermalink | absURL }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+<script id="site-taglines" type="application/json">{{ site.Data.tagline | jsonify | safeHTML }}</script>
+<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>

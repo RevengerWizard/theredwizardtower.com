@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="section-view">
+    <header class="section-view__header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Content }}
+            <div class="section-view__intro">{{ . }}</div>
+        {{ end }}
+    </header>
+    <div class="tag-cloud">
+    {{ range .Data.Terms.ByCount }}
+        <a class="tag-cloud__item" href="{{ .Page.RelPermalink }}">
+            <span class="tag-cloud__name">{{ .Page.Title }}</span>
+            <span class="tag-cloud__count">{{ .Count }}</span>
+        </a>
+    {{ else }}
+        <p class="empty-state">No tags yet.</p>
+    {{ end }}
+    </div>
+</section>
+{{ end }}

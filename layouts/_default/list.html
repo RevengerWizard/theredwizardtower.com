@@ -1,0 +1,41 @@
+{{ define "main" }}
+<section class="section-view{{ if eq .Section "posts" }} section-view--posts{{ end }}">
+    <header class="section-view__header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+        <div class="section-view__intro">{{ . }}</div>
+    {{ end }}
+    </header>
+    {{ if eq .Section "tags" }}
+        <div class="tag-cloud">
+        {{ range .Site.Taxonomies.tags.ByCount }}
+            <a class="tag-cloud__item" href="{{ .Page.RelPermalink }}">
+                <span class="tag-cloud__name">{{ .Page.Title }}</span>
+                <span class="tag-cloud__count">{{ .Count }}</span>
+            </a>
+        {{ else }}
+            <p class="empty-state">No tags yet.</p>
+        {{ end }}
+        </div>
+    {{ else if eq .Section "posts" }}
+        {{ range (.Pages.ByDate.Reverse.GroupByDate "2006") }}
+            <h2 class="section-view__year">{{ .Key }}</h2>
+            <div class="post-feed">
+                {{ range .Pages }}
+                    {{ partial "post-card.html" . }}
+                {{ end }}
+            </div>
+        {{ else }}
+            <p class="empty-state">Nothing published here yet.</p>
+        {{ end }}
+    {{ else }}
+        <div class="post-feed">
+        {{ range .Pages.ByDate.Reverse }}
+            {{ partial "post-card.html" . }}
+        {{ else }}
+            <p class="empty-state">Nothing published here yet.</p>
+        {{ end }}
+        </div>
+    {{ end }}
+</section>
+{{ end }}

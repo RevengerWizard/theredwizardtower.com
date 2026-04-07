@@ -1,0 +1,24 @@
+<article class="post-card">
+    <h2 class="post-card__title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+    <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
+    {{ with .Params.tags }}
+        <ul class="post-card__tags" aria-label="Tags">
+        {{- range first 2 . }}
+            <li>
+                <a href="{{ printf "/tags/%s/" (. | urlize) | relURL }}">
+                    <span class="post-card__tag-icon" aria-hidden="true">
+                        {{ partial "svg.html" (dict "name" "hash") }}
+                    </span>
+                    <span>{{ . }}</span>
+                </a>
+            </li>
+        {{- end }}
+        </ul>
+    {{ end }}
+    <div class="post-card__excerpt">
+        {{ .Params.shortDescription | default .Description | default (.Summary | plainify | truncate 240) }}
+    </div>
+    <a class="post-card__more" href="{{ .RelPermalink }}">Read more...</a>
+</article>

@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section class="section-view{{ if eq .Section "posts" }} section-view--posts{{ end }}">
+<section class="section-view {{ if eq .Section "posts" }}section-view--posts{{ end }}">
     <header class="section-view__header">
     <h1>{{ .Title }}</h1>
     {{ with .Content }}
@@ -20,7 +20,7 @@
         </div>
     {{ else if eq .Section "posts" }}
         {{ range (.Pages.ByDate.Reverse.GroupByDate "2006") }}
-            <h2 class="section-view__year">{{ .Key }}</h2>
+            <h2 class="section-year">{{ .Key }}</h2>
             <div class="post-feed">
                 {{ range .Pages }}
                     {{ partial "post-card.html" . }}

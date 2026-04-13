@@ -1,13 +1,13 @@
-<header class="site-header">
-<div class="site-shell site-header__inner">
-    <div class="brand">
-        <a class="brand__mark" href="{{ "/" | relURL }}" aria-label="Return to home">
-            {{- $logo := resources.Get "images/redwizard.png" -}}
-            <img src="{{ $logo.RelPermalink }}" alt="" width="96" height="96">
+<header class="header">
+<div class="site-shell header-inner">
+    <div class="icon">
+        <a class="icon-image" href="{{ "/" | relURL }}" aria-label="Return to home">
+            {{- $wizard := resources.Get "images/redwizard.png" -}}
+            <img src="{{ $wizard.RelPermalink }}" alt="Red Wizard" width="96" height="96">
         </a>
-        <div class="brand__text">
-            <span class="brand__title">{{ site.Title }}</span>
-            <span class="brand__tagline">...</span>
+        <div class="text">
+            <span class="title">{{ site.Title }}</span>
+            <span class="tagline">...</span>
         </div>
     </div>
     {{- $items := site.Menus.main -}}

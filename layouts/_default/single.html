@@ -1,18 +1,21 @@
 {{ define "main" }}
 
 <article class="content-page">
-    <header class="content-page__header">
-    {{ if eq .Section "posts" }}
-        <time class="content-page__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
-    {{ end }}
-    <h1>{{ .Title }}</h1>
-    {{ if eq .Section "posts" }}
-        {{ with .Description }}
-            <p class="content-page__description">{{ . }}</p>
+    <header class="post-header">
+        {{ if eq .Section "posts" }}
+            <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
         {{ end }}
-    {{ end }}
+        <h1>{{ .Title }}</h1>
+        {{ with (partial "author.html" .) }}
+        <span class="post-author">By {{ . }}</span>
+        {{ end }}
+        {{ if eq .Section "posts" }}
+            {{ with .Description }}
+                <p class="post-description">{{ . }}</p>
+            {{ end }}
+        {{ end }}
     </header>
-    <div class="content-page__body">
+    <div class="post-content">
     {{ partial "anchor.html" .Content }}
     </div>
 </article>

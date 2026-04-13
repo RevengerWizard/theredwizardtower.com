@@ -7,8 +7,9 @@
     padding-top: 0;
 }
 
-.post-card__date,
-.content-page__date,
+.post-card-date,
+.post-date,
+.post-author,
 .section-view__eyebrow {
     display: block;
     color: var(--text-soft);
@@ -19,7 +20,14 @@
     margin-bottom: 0;
 }
 
-.post-card__title,
+.post-author {
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+}
+
+.post-card-title,
 .content-page h1,
 .section-view h1 {
     margin: 0;
@@ -28,17 +36,17 @@
     letter-spacing: -0.02em;
 }
 
-.post-card__title {
+.post-card-title {
     font-size: clamp(1.3rem, 1.8vw, 1.65rem);
 }
 
-.post-card__title a:hover {
+.post-card-title a:hover {
     text-decoration: underline;
     text-decoration-color: var(--accent);
     text-underline-offset: 0.2rem;
 }
 
-.post-card__tags {
+.post-card-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
@@ -47,7 +55,7 @@
     margin: 0.8rem 0 0;
 }
 
-.post-card__tags a {
+.post-card-tags a {
     display: inline-flex;
     align-items: center;
     min-height: 1.3rem;
@@ -62,37 +70,37 @@
     border-radius: 0.2rem;
 }
 
-.post-card__tag-icon {
+.post-card-tag-icon {
     width: 1rem;
     height: 1rem;
     flex-shrink: 0;
 }
 
-.post-card__tag-icon svg {
+.post-card-tag-icon svg {
     width: 100%;
     height: 100%;
 }
 
-.post-card__tag-icon svg * {
+.post-card-tag-icon svg * {
     stroke: currentColor;
 }
 
-.post-card__excerpt,
-.content-page__body,
+.post-card-excerpt,
+.post-content,
 .section-view__intro {
     color: var(--text-soft);
     font-size: 0.98rem;
 }
 
-.post-card__excerpt {
+.post-card-excerpt {
     margin-top: 0.85rem;
 }
 
-.post-card__tags span:last-child {
+.post-card-tags span:last-child {
     line-height: 1;
 }
 
-.post-card__more {
+.post-card-more {
     display: inline-block;
     margin-top: 0.7rem;
     color: var(--text-dim);
@@ -100,7 +108,7 @@
     transition: color 180ms ease;
 }
 
-.post-card__more:hover,
-.post-card__more:focus-visible {
+.post-card-more:hover,
+.post-card-more:focus-visible {
     color: var(--accent);
 }

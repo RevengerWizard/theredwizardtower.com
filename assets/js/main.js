@@ -1,5 +1,5 @@
 (() => {
-  const taglineNode = document.querySelector(".brand__tagline");
+  const taglineNode = document.querySelector(".tagline");
   const dataNode = document.getElementById("site-taglines");
 
   if (!taglineNode || !dataNode) {

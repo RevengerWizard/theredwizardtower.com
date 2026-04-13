@@ -3,6 +3,7 @@
 {{- if and $page (not $page.IsHome) $page.Title -}}
   {{- $title = printf "%s | %s" $page.Title site.Title -}}
 {{- end -}}
+
 {{- $description := "" -}}
 {{- if and $page $page.Description -}}
   {{- $description = $page.Description -}}
@@ -14,7 +15,10 @@
   {{- $description = site.Params.tagline | default site.Title -}}
 {{- end -}}
 {{- $styles := slice
-    (resources.Get "css/style.css")
+    (resources.Get "css/vars.css")
+    (resources.Get "css/chroma-mod.css")
+    (resources.Get "css/chroma-styles.css")
+    (resources.Get "css/main.css")
     (resources.Get "css/header.css")
     (resources.Get "css/terms.css")
     (resources.Get "css/footer.css")
@@ -24,7 +28,8 @@
     | minify
     | fingerprint
 -}}
-{{- $script := resources.Get "js/site.js" | js.Build | minify | fingerprint -}}
+
+{{- $script := resources.Get "js/main.js" | js.Build | minify | fingerprint -}}
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,5 +40,5 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
-<script id="site-taglines" type="application/json">{{ site.Data.tagline | jsonify | safeHTML }}</script>
+<script id="site-taglines" type="application/json">[{{- range $index, $tagline := site.Data.tagline -}}{{- if $index }},{{ end -}}{{ printf "%q" $tagline }}{{- end -}}]</script>
 <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>

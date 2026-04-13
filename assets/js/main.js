@@ -1,15 +1,28 @@
 (() => {
-  const homepage = document.querySelector(".content-page--home");
   const taglineNode = document.querySelector(".brand__tagline");
   const dataNode = document.getElementById("site-taglines");
 
-  if (!homepage || !taglineNode || !dataNode) {
+  if (!taglineNode || !dataNode) {
     return;
   }
 
   let taglines = [];
   try {
-    taglines = JSON.parse(dataNode.textContent || "[]");
+    const raw = dataNode.textContent || "[]";
+    const parsed = JSON.parse(raw);
+    taglines = (typeof parsed === "string" ? JSON.parse(parsed) : parsed).map(
+      (tagline) => {
+        if (typeof tagline !== "string") {
+          return "";
+        }
+
+        try {
+          return JSON.parse(tagline);
+        } catch (error) {
+          return tagline;
+        }
+      },
+    );
   } catch (error) {
     return;
   }

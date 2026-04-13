@@ -2,12 +2,14 @@
 
 <article class="content-page">
     <header class="content-page__header">
-    <h1>{{ .Title }}</h1>
     {{ if eq .Section "posts" }}
         <time class="content-page__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
     {{ end }}
-    {{ with .Description }}
-        <p class="content-page__description">{{ . }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ if eq .Section "posts" }}
+        {{ with .Description }}
+            <p class="content-page__description">{{ . }}</p>
+        {{ end }}
     {{ end }}
     </header>
     <div class="content-page__body">

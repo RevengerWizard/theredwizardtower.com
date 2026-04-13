@@ -1,11 +1,10 @@
-+++
-title = "Structured search and sorting"
-date = 2024-11-18
-draft = false
-tags = ["programming", "algorithms", "golang"]
-description = "A test article with code blocks, tables, and a slightly longer narrative to validate the content layout."
-shortDescription = "A compact demonstration of predictable search, stable sorting, and deterministic tie-breakers."
-+++
+---
+title: "Structured search and sorting"
+date: 2024-11-18
+draft: false
+tags: ["programming", "algorithms", "golang"]
+description: "A test article with code blocks, tables, and a slightly longer narrative to validate the content layout."
+---
 
 This post is intentionally more complex than the existing ones so you can test headings, code blocks, lists, and inline formatting on the site.
 

@@ -5,7 +5,7 @@
     <time class="post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
     {{ with .Params.tags }}
         <ul class="post-card__tags" aria-label="Tags">
-        {{- range first 2 . }}
+        {{- range . }}
             <li>
                 <a href="{{ printf "/tags/%s/" (. | urlize) | relURL }}">
                     <span class="post-card__tag-icon" aria-hidden="true">
@@ -18,7 +18,7 @@
         </ul>
     {{ end }}
     <div class="post-card__excerpt">
-        {{ .Params.shortDescription | default .Description | default (.Summary | plainify | truncate 240) }}
+        {{ .Params.description | default (.Summary | plainify | truncate 240) }}
     </div>
     <a class="post-card__more" href="{{ .RelPermalink }}">Read more...</a>
 </article>

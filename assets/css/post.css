@@ -12,7 +12,7 @@
 .section-view__eyebrow {
     display: block;
     color: var(--text-soft);
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     margin-top: 0.45rem;
@@ -32,14 +32,7 @@
     font-size: clamp(1.3rem, 1.8vw, 1.65rem);
 }
 
-.post-card__title a {
-    display: inline;
-    transition: color 180ms ease, text-decoration-color 180ms ease;
-}
-
-.post-card__title a:hover,
-.post-card__title a:focus-visible {
-    color: #fff;
+.post-card__title a:hover {
     text-decoration: underline;
     text-decoration-color: var(--accent);
     text-underline-offset: 0.2rem;
@@ -57,25 +50,21 @@
 .post-card__tags a {
     display: inline-flex;
     align-items: center;
-    min-height: 1.1rem;
-    padding: 0.08rem 0.35rem;
+    min-height: 1.3rem;
+    padding-right: 0.25rem;
     background: var(--accent);
     color: #fff;
     font-family: "Roboto Mono", monospace;
     font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
-    border-radius: 0.45rem;
+    border-radius: 0.2rem;
 }
 
 .post-card__tag-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 0.78rem;
-    height: 0.78rem;
-    margin-right: 0.25rem;
+    width: 1rem;
+    height: 1rem;
     flex-shrink: 0;
 }
 

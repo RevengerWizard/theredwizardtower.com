@@ -2,12 +2,17 @@ baseURL = 'https://theredwizardtower.com'
 languageCode = 'en-us'
 title = 'The Red Wizard Tower'
 
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
 [taxonomies]
 tag = 'tags'
 
 [params]
-tagline = "Sweet dreams are melodies"
-author = "Revenger Wizard"
+author = "Valentin"
 
 [[menu.main]]
 name = "About"

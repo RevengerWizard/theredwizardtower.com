@@ -1,10 +1,13 @@
 {{- $name := .name | default . -}}
+
 {{- $filename := $name -}}
 {{- if not (strings.HasSuffix $filename ".svg") -}}
     {{- $filename = printf "%s.svg" $filename -}}
 {{- end -}}
+
 {{- $resource := resources.Get (printf "svg/%s" $filename) -}}
 {{- if not $resource -}}
     {{- errorf "svg: asset %q not found" $name -}}
 {{- end -}}
+
 {{- $resource.Content | safeHTML -}}

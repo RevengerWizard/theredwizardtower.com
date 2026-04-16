@@ -2,12 +2,24 @@
 
 <article class="content-page">
     <header class="post-header">
+        {{ if .Section }}
+            {{ partial "breadcrumbs.html" . }}
+        {{ end }}
         {{ if eq .Section "posts" }}
             <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
         {{ end }}
-        <h1>{{ .Title }}</h1>
-        {{ with (partial "author.html" .) }}
-        <span class="post-author">By {{ . }}</span>
+        <h1>
+            {{ .Title }}
+            {{ if .Draft }}
+                <span class="draft-icon" title="Draft">
+                    {{ partial "svg.html" (dict "name" "draft") }}
+                </span>
+            {{ end }}
+        </h1>
+        {{ if ne .Type "page" }}
+            {{ with (partial "author.html" .) }}
+            <span class="post-author">By {{ . }}</span>
+            {{ end }}
         {{ end }}
         {{ if eq .Section "posts" }}
             {{ with .Description }}
@@ -18,6 +30,45 @@
     <div class="post-content">
     {{ partial "anchor.html" .Content }}
     </div>
+    {{ if eq .Section "posts" }}
+    <footer class="post-footer">
+        {{ with .GetTerms "tags" }}
+            <ul class="post-card-tags" aria-label="Tags">
+            {{- range . }}
+                <li>
+                    <a href="{{ .RelPermalink }}">
+                        <span class="post-card-tag-icon" aria-hidden="true">
+                            {{ partial "svg.html" (dict "name" "hash") }}
+                        </span>
+                        <span>{{ .LinkTitle }}</span>
+                    </a>
+                </li>
+            {{- end }}
+            </ul>
+        {{ end }}
+
+        {{ if or .PrevInSection .NextInSection }}
+        <nav class="post-navigation">
+            <div class="post-nav-prev">
+                {{ with .PrevInSection }}
+                <a href="{{ .RelPermalink }}" class="post-nav-link">
+                    <span class="post-nav-label">← Previous</span>
+                    <span class="post-nav-title">{{ .Title }}</span>
+                </a>
+                {{ end }}
+            </div>
+            <div class="post-nav-next">
+                {{ with .NextInSection }}
+                <a href="{{ .RelPermalink }}" class="post-nav-link">
+                    <span class="post-nav-label">Next →</span>
+                    <span class="post-nav-title">{{ .Title }}</span>
+                </a>
+                {{ end }}
+            </div>
+        </nav>
+        {{ end }}
+    </footer>
+    {{ end }}
 </article>
 
 {{ end }}

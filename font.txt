@@ -1,3 +1,5 @@
 title: IBM Plex Sans | Playfair Display
 body: Inter
 tagline: Inter
+
+Geist

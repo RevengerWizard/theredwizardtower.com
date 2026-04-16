@@ -3,4 +3,6 @@ title = "Projects"
 description = "A home for games, tools, and ongoing experiments."
 +++
 
-Projects are coming soon.
+These are some projects I've been working on. 
+
+All projects source code are hosted on Github.

@@ -1,27 +1,27 @@
-.error-page {
+.notfound {
     width: min(100%, var(--content));
     margin: 0 auto;
     text-align: left;
     padding: 2rem 0 4rem;
 }
 
-.error-page__code {
+.notfound-code {
     display: inline-block;
     margin-bottom: 0.75rem;
     color: var(--accent);
-    font-family: "Roboto Mono", monospace;
+    font-family: var(--mono-font);
     font-size: 0.9rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
-.error-page h1 {
+.notfound h1 {
     margin: 0;
     font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1.05;
 }
 
-.error-page p {
+.notfound p {
     color: var(--text-soft);
     font-size: 1rem;
 }

@@ -1,14 +1,15 @@
 {{ define "main" }}
 
-<section class="content-page content-page--home">
+<section class="content-page content-page-home">
     <div class="post-content">
     {{ .Content }}
     </div>
+    {{ partial "social-icons.html" . }}
 </section>
 
 {{- $posts := where site.RegularPages "Section" "posts" -}}
-<section class="section-view section-view--recent" aria-label="Recent posts">
-    <header class="section-view__header">
+<section class="section" aria-label="Recent posts">
+    <header class="section-header">
     <h1>Recent</h1>
     </header>
     <div class="post-feed">

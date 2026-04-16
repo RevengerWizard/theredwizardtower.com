@@ -1,5 +1,10 @@
 <footer class="footer">
     <div class="site-shell">
-        <p>&copy; {{ now.Format "2006" }} {{ site.Params.author }}. All rights reserved.</p>
+        <div class="footer-inner">
+            <p>&copy; {{ now.Format "2006" }} {{ site.Params.author }}. All rights reserved.</p>
+            {{ with site.Params.email }}
+            <p class="footer-contact">Contact: <a href="mailto:{{ . }}">{{ . }}</a></p>
+            {{ end }}
+        </div>
     </div>
 </footer>

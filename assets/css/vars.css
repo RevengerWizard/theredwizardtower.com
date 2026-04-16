@@ -11,5 +11,9 @@
     --shadow: 0 18px 48px rgba(0, 0, 0, 0.3);
     --shell: 980px;
     --content: 740px;
+    --body-font: "Inter", "Helvetica Neue", Arial, sans-serif;
+    --title-font: "IBM Plex Sans", sans-serif;
+    --project-title-font: "Playfair Display", serif;
+    --nav-font: "Roboto", sans-serif;
     --mono-font: Consolas, "Liberation Mono", "Courier New", monospace;
 }

@@ -1,20 +1,65 @@
-.post-card {
-    padding: 1.9rem 0 2rem;
-    border-bottom: 1px solid var(--line);
+.post-content > *:first-child {
+    margin-top: 0;
 }
 
-.post-card:first-child {
-    padding-top: 0;
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content pre,
+.post-content blockquote {
+    margin: 0 0 1.15rem;
+}
+
+.post-content h1 a,
+.post-content h2 a,
+.post-content h3 a,
+.post-content h4 a {
+    color: var(--text);
+}
+
+.post-content h1 .anchor:hover,
+.post-content h2 .anchor:hover,
+.post-content h3 .anchor:hover,
+.post-content h4 .anchor:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 0.2rem;
+}
+
+.post-content code {
+    font-family: var(--mono-font);
+    font-size: 0.92em;
+    padding: 0.15rem 0.35rem;
+}
+
+.post-content pre {
+    padding: 1rem 0.7rem;
+    overflow-x: auto;
+    border-radius: 1rem;
+    background: #2d2a2e !important
+}
+
+.post-content pre code {
+    padding: 0;
+    border: 0;
+    font-family: var(--mono-font);
+}
+
+.post-content blockquote {
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--accent);
+    color: #b8b8b8;
 }
 
 .post-card-date,
 .post-date,
 .post-author,
-.section-view__eyebrow {
+.section-eyebrow {
     display: block;
     color: var(--text-soft);
     font-size: 1rem;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--body-font);
     font-weight: 300;
     margin-top: 0.45rem;
     margin-bottom: 0;
@@ -24,91 +69,94 @@
     color: var(--text-soft);
     font-size: 0.9rem;
     font-weight: 300;
-    font-family: "Roboto", sans-serif;
+    font-family: var(--body-font);
 }
 
 .post-card-title,
 .content-page h1,
-.section-view h1 {
+.section h1 {
     margin: 0;
+    font-family: var(--title-font);
     font-size: clamp(1.7rem, 2.1vw, 2.2rem);
     line-height: 1.16;
     letter-spacing: -0.02em;
 }
 
-.post-card-title {
-    font-size: clamp(1.3rem, 1.8vw, 1.65rem);
-}
-
-.post-card-title a:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    text-underline-offset: 0.2rem;
-}
-
-.post-card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    list-style: none;
-    padding: 0;
-    margin: 0.8rem 0 0;
-}
-
-.post-card-tags a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 1.3rem;
-    padding-right: 0.25rem;
-    background: var(--accent);
-    color: #fff;
-    font-family: "Roboto Mono", monospace;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    border-radius: 0.2rem;
-}
-
-.post-card-tag-icon {
-    width: 1rem;
-    height: 1rem;
-    flex-shrink: 0;
-}
-
-.post-card-tag-icon svg {
-    width: 100%;
-    height: 100%;
-}
-
-.post-card-tag-icon svg * {
-    stroke: currentColor;
+.tag-item:hover,
+.post-card-tags a:hover {
+    opacity: 0.85;
 }
 
 .post-card-excerpt,
 .post-content,
-.section-view__intro {
+.section-intro {
     color: var(--text-soft);
     font-size: 0.98rem;
 }
 
-.post-card-excerpt {
-    margin-top: 0.85rem;
+.post-footer {
+    margin-top: 3.2rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid var(--line);
 }
 
-.post-card-tags span:last-child {
-    line-height: 1;
-}
-
-.post-card-more {
-    display: inline-block;
-    margin-top: 0.7rem;
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    transition: color 180ms ease;
-}
-
-.post-card-more:hover,
-.post-card-more:focus-visible {
+.draft-icon {
+    display: inline-flex;
+    align-items: center;
     color: var(--accent);
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.draft-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.post-footer .post-navigation:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.post-nav-prev, .post-nav-next {
+    flex: 1;
+}
+
+.post-nav-next {
+    text-align: right;
+}
+
+.post-nav-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-nav-label {
+    color: var(--accent);
+    font-family: var(--mono-font);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+}
+
+.post-nav-link:hover .post-nav-label {
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
+
+.post-nav-title {
+    font-family: var(--title-font);
+    font-size: 1.05rem;
+    color: var(--text-soft);
+    line-height: 1.4;
 }

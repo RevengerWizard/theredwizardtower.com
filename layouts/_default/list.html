@@ -1,21 +1,30 @@
 {{ define "main" }}
 
-<section class="section-view {{ if eq .Section "posts" }}section-view--posts{{ end }}">
-    <header class="section-view__header">
+<section class="section {{ if eq .Section "posts" }}section-posts{{ end }}">
+    <header class="section-header">
     <h1>{{ .Title }}</h1>
     {{ with .Content }}
-        <div class="section-view__intro">{{ . }}</div>
+        <div class="section-intro">{{ . }}</div>
     {{ end }}
     </header>
-    {{ if eq .Section "tags" }}
-        <div class="tag-cloud">
-        {{ range .Site.Taxonomies.tags.ByCount }}
-            <a class="tag-cloud__item" href="{{ .Page.RelPermalink }}">
-                <span class="tag-cloud__name">{{ .Page.Title }}</span>
-                <span class="tag-cloud__count">{{ .Count }}</span>
-            </a>
+    {{ if eq .Section "projects" }}
+        <div class="project-list">
+        {{ range site.Params.projects }}
+            {{- $repo := replaceRE "^https?://github\\.com/" "" .url -}}
+            <article class="project-item" data-github-repo="{{ $repo }}">
+                <h2 class="project-title">
+                    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+                    <span class="project-stars" aria-label="GitHub stars">
+                        <span class="project-stars-icon" aria-hidden="true">
+                            {{ partial "svg.html" (dict "name" "star") }}
+                        </span>
+                        <span class="project-stars-count" data-project-stars-count>—</span>
+                    </span>
+                </h2>
+                <p class="project-description">{{ .description }}</p>
+            </article>
         {{ else }}
-            <p class="empty-state">No tags yet.</p>
+            <p class="empty-state">No projects listed yet.</p>
         {{ end }}
         </div>
     {{ else if eq .Section "posts" }}

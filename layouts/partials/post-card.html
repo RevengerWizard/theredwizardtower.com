@@ -1,17 +1,22 @@
 <article class="post-card">
     <h2 class="post-card-title">
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ if .Draft }}
+            <span class="draft-icon" title="Draft">
+                {{ partial "svg.html" (dict "name" "draft") }}
+            </span>
+        {{ end }}
     </h2>
     <time class="post-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January, 2006" }}</time>
-    {{ with .Params.tags }}
+    {{ with .GetTerms "tags" }}
         <ul class="post-card-tags" aria-label="Tags">
         {{- range . }}
             <li>
-                <a href="{{ printf "/tags/%s/" (. | urlize) | relURL }}">
+                <a href="{{ .RelPermalink }}">
                     <span class="post-card-tag-icon" aria-hidden="true">
                         {{ partial "svg.html" (dict "name" "hash") }}
                     </span>
-                    <span>{{ . }}</span>
+                    <span>{{ .LinkTitle }}</span>
                 </a>
             </li>
         {{- end }}

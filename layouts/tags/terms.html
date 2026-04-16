@@ -1,18 +1,23 @@
 {{ define "main" }}
 
-<section class="section-view">
-    <header class="section-view__header">
+<section class="section">
+    <header class="section-header">
         <h1>{{ .Title }}</h1>
         {{ with .Content }}
-            <div class="section-view__intro">{{ . }}</div>
+            <div class="section-intro">{{ . }}</div>
         {{ end }}
     </header>
-    <div class="tag-cloud">
-    {{ range .Data.Terms.ByCount }}
-        <a class="tag-cloud__item" href="{{ .Page.RelPermalink }}">
-            <span class="tag-cloud__name">{{ .Page.Title }}</span>
-            <span class="tag-cloud__count">{{ .Count }}</span>
-        </a>
+    <div class="tag">
+    {{ range site.Taxonomies.tags.ByCount }}
+        <div class="tag-wrapper">
+            <a class="tag-item" href="{{ .Page.RelPermalink }}">
+                <span class="post-card-tag-icon" aria-hidden="true">
+                    {{ partial "svg.html" (dict "name" "hash") }}
+                </span>
+                <span class="tag-name">{{ .Page.Title }}</span>
+            </a>
+            <span class="tag-count">{{ .Count }}</span>
+        </div>
     {{ else }}
         <p class="empty-state">No tags yet.</p>
     {{ end }}

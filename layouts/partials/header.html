@@ -11,15 +11,15 @@
         </div>
     </div>
     {{- $items := site.Menus.main -}}
-    <nav class="site-nav" aria-label="Primary navigation">
+    <nav class="nav" aria-label="Primary navigation">
     {{- range $items }}
         {{- $url := .URL -}}
         {{- $isExternal := or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
         {{- $isCurrent := and (not $isExternal) (eq $.RelPermalink ($url | relURL)) -}}
-        <a class="site-nav__link{{ if $isCurrent }} is-active{{ end }}" href="{{ $url | relURL }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
+        <a class="nav-link{{ if $isCurrent }} is-active{{ end }}" href="{{ $url | relURL }}"{{ if $isExternal }} target="_blank" rel="noopener noreferrer"{{ end }}>
             <span>{{ .Name }}</span>
             {{ if $isExternal }}
-                <span class="site-nav__icon" aria-hidden="true">{{ partial "svg.html" (dict "name" "redirect.svg") }}</span>
+                <span class="nav-icon" aria-hidden="true">{{ partial "svg.html" (dict "name" "redirect.svg") }}</span>
             {{ end }}
         </a>
     {{- end }}

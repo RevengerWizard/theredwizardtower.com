@@ -10,6 +10,20 @@
     margin: 0 0 1.15rem;
 }
 
+.post-content a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+.post-content a:hover,
+.post-content a:focus-visible {
+    color: var(--accent);
+    text-decoration-thickness: 2px;
+}
+
 .post-content h1 a,
 .post-content h2 a,
 .post-content h3 a,
@@ -50,6 +64,29 @@
     padding-left: 1.2rem;
     border-left: 3px solid var(--accent);
     color: #b8b8b8;
+}
+
+.post-content .text-accent {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+.post-content .text-bright {
+    color: var(--text);
+}
+
+.post-content .featured-prose {
+    display: block;
+    margin: 1rem auto;
+    padding: 1.2rem 1.3rem;
+    color: var(--text);
+    font-family: "EB Garamond", Georgia, serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-style: italic;
+    border-left: 3px solid var(--accent);
 }
 
 .post-card-date,

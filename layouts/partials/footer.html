@@ -3,7 +3,13 @@
         <div class="footer-inner">
             <p>&copy; {{ now.Format "2006" }} {{ site.Params.author }}. All rights reserved.</p>
             {{ with site.Params.email }}
-            <p class="footer-contact">Contact: <a href="mailto:{{ . }}">{{ . }}</a></p>
+            <p class="footer-contact">
+                <a href="mailto:{{ . }}">Contact</a>
+                <span class="footer-separator" aria-hidden="true">·</span>
+                <a href="{{ "index.xml" | relURL }}">RSS</a>
+                <span class="footer-separator" aria-hidden="true">·</span>
+                <a href="{{ "sitemap.xml" | relURL }}">Sitemap</a>
+            </p>
             {{ end }}
         </div>
     </div>

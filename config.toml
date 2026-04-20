@@ -18,10 +18,26 @@ disableHLJS = true
 author = "Valentin"
 email = "hello@theredwizardtower.com"
 
+# Social Icons
 [[params.socialIcons]]
 name = "linkedin"
 title = "Linkedin"
 url = "https://www.linkedin.com/in/valentin-voina-4267b7308"
+
+[[params.socialIcons]]
+name = "reddit"
+title = "Reddit"
+url = "https://reddit.com/user/RevengerWizard"
+
+[[params.socialIcons]]
+name = "discord"
+title = "Discord server"
+url = "https://discord.gg/wdeJ8fydP3"
+
+[[params.socialIcons]]
+name = "twitter"
+title = "Twitter"
+url = "https://twitter.com/RevengerWizard"
 
 [[params.socialIcons]]
 name = "github"
@@ -33,12 +49,13 @@ name = "email"
 title = "Email"
 url = "mailto:hello@theredwizardtower.com"
 
+# Projects
 [[params.projects]]
 name = "Teascript"
 title = "teascript"
 year = 2022
 description = """
-An small interpreter written in C for a dynamically typed language."""
+A small stack-based bytecode interpreter written in C for a dynamically typed language."""
 url = "https://github.com/RevengerWizard/teascript"
 
 [[params.projects]]

@@ -1,12 +1,11 @@
 .footer {
-    margin-top: 4.6rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    margin-top: 4.5rem;
     background: rgba(255, 255, 255, 0.01);
     flex-shrink: 0;
 }
 
 .footer .site-shell {
-    padding: 1.55rem 0 1.9rem;
+    padding: 1.5rem 0 1.9rem;
 }
 
 .footer p {
@@ -14,4 +13,21 @@
     text-align: center;
     color: var(--text-dim);
     font-size: 0.8rem;
+}
+
+.footer a {
+    color: var(--text-dim);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+    color: var(--text-dim);
+    text-decoration-thickness: 2px;
+}
+
+.footer-separator {
+    color: var(--text-dim);
 }

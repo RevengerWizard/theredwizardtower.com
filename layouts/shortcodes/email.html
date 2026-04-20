@@ -1,0 +1,3 @@
+{{- $email := site.Params.email -}}
+{{- $href := printf "mailto:%s" $email -}}
+<a href="{{ $href }}">{{- .Inner | default $email | safeHTML -}}</a>

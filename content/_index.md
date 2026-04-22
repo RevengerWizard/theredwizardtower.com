@@ -12,6 +12,7 @@ Gaze upon its crimson bricks and its crippling, spiraling stone stairs; its maze
 
 You may remain as much as you like.
 
-The purpose of this website is to collect my thoughts, ideas and articles in one place. Topics may range from programming languages, interpreters, compilers, writing and much more!
+The purpose of this website is to collect my thoughts, ideas and articles in one place.  
+Topics may range from programming languages, interpreters, compilers, writing and much more!
 
-If these interest you, recent posts are displayed down below...
+If these topics interest you, recent posts are displayed down below...

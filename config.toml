@@ -2,6 +2,8 @@ baseURL = 'https://theredwizardtower.com'
 languageCode = 'en-us'
 title = 'The Red Wizard Tower'
 
+buildDrafts = true
+
 [markup.goldmark.renderer]
 unsafe = true
 

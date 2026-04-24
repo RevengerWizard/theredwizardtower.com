@@ -76,6 +76,14 @@ description = """
 A pixel framework that uses Teascript as its scripting language; currently being rewritten in Viper."""
 url = "https://github.com/RevengerWizard/micro"
 
+[[params.projects]]
+name = "Microfantasy"
+title = "microfantasy"
+year = 2025
+description = """
+A small pixel game made with Teascript and built using micrö framework."""
+url = "https://github.com/RevengerWizard/microfantasy"
+
 [[menu.main]]
 name = "About"
 url = "/about/"

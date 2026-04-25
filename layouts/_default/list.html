@@ -3,10 +3,10 @@
 <section class="section {{ if eq .Section "posts" }}section-posts{{ end }}">
     <header class="section-header">
     <h1>{{ .Title }}</h1>
+    </header>
     {{ with .Content }}
         <div class="section-intro">{{ . }}</div>
     {{ end }}
-    </header>
     {{ if eq .Section "projects" }}
         <div class="project-list">
         {{ range site.Params.projects }}

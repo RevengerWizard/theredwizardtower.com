@@ -10,6 +10,24 @@
     margin: 0 0 1.15rem;
 }
 
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin: 1.7rem 0 0.85rem;
+}
+
+.post-content ul,
+.post-content ol {
+    padding-left: 1.35rem;
+}
+
+.post-content li + li {
+    margin-top: 0.35rem;
+}
+
 .post-content a {
     color: var(--accent);
     text-decoration: underline;

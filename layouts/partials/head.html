@@ -16,6 +16,7 @@
 {{- end -}}
 {{- $styles := slice
     (resources.Get "css/vars.css")
+    (resources.Get "css/reset.css")
     (resources.Get "css/chroma-mod.css")
     (resources.Get "css/chroma-styles.css")
     (resources.Get "css/main.css")
@@ -26,6 +27,7 @@
     (resources.Get "css/404.css")
     (resources.Get "css/post.css")
     (resources.Get "css/post-card.css")
+    (resources.Get "css/scroll-bar.css")
     | resources.Concat "css/site.css"
     | minify
     | fingerprint
@@ -34,7 +36,8 @@
 {{- $script := resources.Get "js/main.js" | js.Build | minify | fingerprint -}}
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
 <meta name="author" content="{{ site.Params.author }}">
@@ -66,3 +69,5 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#111111">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">

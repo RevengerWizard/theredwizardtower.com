@@ -52,6 +52,18 @@ svg {
     margin-bottom: 1.8rem;
 }
 
+.section-intro {
+    margin: 0.8rem 0 1.8rem;
+}
+
+.section-intro p {
+    margin: 0 0 1.15rem;
+}
+
+.section-intro p:last-child {
+    margin-bottom: 0;
+}
+
 .breadcrumbs {
     display: block;
     font-size: 0.9rem;

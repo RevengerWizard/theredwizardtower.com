@@ -15,5 +15,5 @@
     --title-font: "IBM Plex Sans", sans-serif;
     --project-title-font: "Playfair Display", serif;
     --nav-font: "Roboto", sans-serif;
-    --mono-font: Consolas, "Liberation Mono", "Courier New", monospace;
+    --mono-font: "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
 }

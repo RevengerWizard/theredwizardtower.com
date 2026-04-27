@@ -57,7 +57,10 @@ name = "Teascript"
 title = "teascript"
 year = 2022
 description = """
-A small stack-based bytecode interpreter written in C for a dynamically typed language."""
+A small stack-based bytecode interpreter written in C for a dynamically typed language.
+
+Website: [teascript.org](https://teascript.org)
+"""
 url = "https://github.com/RevengerWizard/teascript"
 
 [[params.projects]]

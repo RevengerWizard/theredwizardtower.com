@@ -21,7 +21,10 @@
                         <span class="project-stars-count" data-project-stars-count>—</span>
                     </span>
                 </h2>
-                <p class="project-description">{{ .description | markdownify }}</p>
+                {{ with .year }}
+                    <span class="project-year">{{ . }}</span>
+                {{ end }}
+                <div class="project-description">{{ .description | markdownify }}</div>
             </article>
         {{ else }}
             <p class="empty-state">No projects listed yet.</p>

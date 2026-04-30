@@ -20,9 +20,8 @@
 .post-card-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.44rem;
     list-style: none;
-    padding: 0;
     margin: 0.8rem 0 0;
 }
 
@@ -30,7 +29,8 @@
     display: inline-flex;
     align-items: center;
     min-height: 1.3rem;
-    padding-right: 0.25rem;
+    padding-left: 0.2rem;
+    padding-right: 0.43rem;
     background: var(--accent);
     color: #fff;
     font-family: var(--mono-font);

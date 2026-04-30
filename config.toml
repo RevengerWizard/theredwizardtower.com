@@ -24,7 +24,7 @@ email = "hello@theredwizardtower.com"
 [[params.socialIcons]]
 name = "linkedin"
 title = "Linkedin"
-url = "https://www.linkedin.com/in/valentin-voina-4267b7308"
+url = "https://www.linkedin.com/in/valentin-voina"
 
 [[params.socialIcons]]
 name = "reddit"
@@ -57,7 +57,9 @@ name = "Teascript"
 title = "teascript"
 year = 2022
 description = """
-A small stack-based bytecode interpreter written in C for a dynamically typed language.
+A small bytecode interpreter for a dynamically typed language.
+
+Featuring a stack-based VM, minimal core library, and a small, clean C API.
 
 Website: [teascript.org](https://teascript.org)
 """
@@ -68,7 +70,10 @@ name = "Viper"
 title = "viper"
 year = 2025
 description = """
-A compiler written in C for a statically compiled language."""
+A compiler written in C with no dependencies for a statically compiled language.
+
+Generates TAC IR and lowers to x64 machine code.
+"""
 url = "https://github.com/RevengerWizard/viper"
 
 [[params.projects]]

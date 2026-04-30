@@ -59,7 +59,7 @@ Thus, the next step seemed pretty obvious.
 
 Re-writing from scratch my updated Juno version to use Teascript as its main scripting language instead of Lua! Such task required a brand new separate name for the project, which I decided to call Micrö, spelled with the funny "o" with the two dots on top of it.
 
-This name comes from a pixel tileset extension pack I made, µFantasy (microfantasy plus). The [original pack](https://0x72.itch.io/microfantasy) was made by the awesome [0x72](https://0x72.itch.io/).
+This name comes from a pixel tileset extension pack I made, µFantasy+ (microfantasy plus). The [original pack](https://0x72.itch.io/microfantasy) was made by the awesome [0x72](https://0x72.itch.io/).
 
 Everything converning the Micro framework and be accessed through the global variable `micro`, which exposes the same sub-modules of Juno, with some re-naming and additions for my convenience, as listed below:
 

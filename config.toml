@@ -4,11 +4,16 @@ title = 'The Red Wizard Tower'
 
 buildDrafts = true
 
-[markup.goldmark.renderer]
-unsafe = true
+[markup]
 
 [markup.highlight]
 noClasses = false
+codeFences = true
+tabWidth = 4
+
+[markup.goldmark.renderer]
+hardWraps = false
+unsafe = true
 
 [taxonomies]
 tag = 'tags'

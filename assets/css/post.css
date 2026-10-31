@@ -59,24 +59,19 @@
     text-underline-offset: 0.2rem;
 }
 
-.post-content code {
+.post-content pre code {
+    border-radius: var(--radius);
     font-family: var(--mono-font);
-    font-size: 0.95em;
-    padding: 0.15rem 0.35rem;
-    margin: auto 3px;
-}
-
-.post-content pre {
-    padding: 1rem 0.7rem;
-    overflow-x: auto;
-    border-radius: 1rem;
-    background: #2d2a2e !important
 }
 
 .post-content pre code {
-    padding: 0;
-    border: 0;
-    font-family: var(--mono-font);
+    display: grid;
+    margin: auto 0;
+    padding: 10px;
+    background: #2d2a2e !important;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    word-break: break-all;
 }
 
 .post-content blockquote {

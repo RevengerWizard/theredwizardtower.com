@@ -6,12 +6,12 @@ tags = ['c', 'teascript', 'micro', 'wasm', 'wasi']
 +++
 
 I've been experimenting with WASM a few times before.
-Getting normal C projects compiling under WASM has always been rather finnicky. For once, gcc and clang do not support WASM as a main target out of the box, you're therefore forced to find another way to reach your desired output. One pretty popular way to get your C and C++ to cleanly compile to WASM is through [emscripten](emscripten.org/).
+Getting normal C projects compiling under WASM has always been rather finnicky. For once, gcc and clang do not support WASM as a main target out of the box, you're therefore forced to find another way to reach your desired output. One pretty popular way to get your C and C++ to cleanly compile to WASM is through [emscripten](https://emscripten.org/).
 
 Emscripten allows you to compile your C projects into WASM by using the powers of LLVM. It also comprises a set of Javascript functions and glue for managing the resulting WASM, as well as even being able to write JS functions directly into your C files.
 Now, this is what I've been using and trying for a few times before.
 
-My first exposure compiling to WASM has been by attempting to make a minimal web running version for my [Teascript](teascript.org/) interpreter. The project structure is pretty straightforward, comprising a list of C files all under a `src/` directory.
+My first exposure compiling to WASM has been by attempting to make a minimal web running version for my [Teascript](https://teascript.org/) interpreter. The project structure is pretty straightforward, comprising a list of C files all under a `src/` directory.
 Emscripten is used through the command line program `emcc`, which has options matching those of gcc and clang.
 Each input C file is first compiled into an object file, just as it's usually the case, but since our desired target is WASM, these will actually also contain WASM code! The final `tea.wasm` or static library `libtea.a` will then be created by giving the Emscripten linker program all the generated object files.
 Here's what the `emscripten.make` file used to compile Teascript into WASM looked like:
@@ -104,7 +104,7 @@ To run WASM outside a browser one can use some of the runtimes available, such a
 Circling back, the same issue we had in the browser still poses in a native environment.
 How do let WASM comunicate with the operating system? Handling IO, reading environment variables, reading and writing files, and much more? This is where WASI comes into play.
 
-WASI, WebAssembly System Interface, is a group of standard API specifications, and as described in its [website](wasi.dev/):
+WASI, WebAssembly System Interface, is a group of standard API specifications, and as described in its [website](https://wasi.dev/):
 
 > WASI is designed to provide a secure standard interface for applications that can be compiled to Wasm from any language, and that may run anywhere, from browsers to clouds to embedded devices.
 
@@ -145,7 +145,7 @@ Here is how you may override the WASI in the Javascript imports object:
 const imports = { wasi_snapshot_preview1: wasi }
 ```
 
-Where `wasi` is our object of WASI functions written in Javascript, to interact with the browser. From here on, we can fill in all the WASI functions that we may need, or add stubs for others. One such example, although just a shim, is [this one](github.com/bjorn3/browser_wasi_shim).
+Where `wasi` is our object of WASI functions written in Javascript, to interact with the browser. From here on, we can fill in all the WASI functions that we may need, or add stubs for others. One such example, although just a shim, is [this one](https://github.com/bjorn3/browser_wasi_shim).
 
 Back in our [previous post](posts/chronicles-of-the-lost-pixel-framework), I exposed a bit of "history" about my micro pixel framework, if one may call it that.
 It's another fairly small and boring C project, embedding Teascript for scripting inside the framework.
